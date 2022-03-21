@@ -19,23 +19,22 @@
 -->
 
 <misterromdescription>
-    <about
-        source ="https://github.com/GX400-Friends/gx400-bin"
-        author="LMN-san OScherler Raki"
-        twitter="@LmnSama @oscherler @RCAVictorCo"
-    />
-    <name>nemesisuk</name>
-    <mratimestamp>202202200000</mratimestamp>
-    <setname>Nemesis (UK)</setname>
+    <about source ="https://github.com/GX400-Friends/gx400-bin" author="LMN-san OScherler Raki" twitter="@LmnSama @oscherler @RCAVictorCo"/>
+    <name>Nemesis (World, ROM version)</name>
+    <setname>nemesisuk</setname>
+    <rbf>nemesis</rbf>
+    <mameversion>0240</mameversion>
     <year>1985</year>
     <manufacturer>Konami</manufacturer>
     <category>Shooter</category>
     <rbf>nemesis</rbf>
-    <mameversion>0217</mameversion>
-    <rom index="0" zip="nemesisuk.zip|nemesuk.zip|nemesis.zip" md5="none" type="merged|nonmerged|split">
-        <!-- ROMs -->
+    <players>2</players>
+    <joystick>8-way</joystick>
+    <rotation>Horizontal</rotation>
+    <region>World</region>
 
-        <!-- Main CPU: M68K -->
+    <rom index="0" zip="nemesisuk.zip|nemesis.zip" md5="None">
+        <!-- maincpu - starts at 0x0 -->
         <interleave output="16">
             <part name="456-e01.12a" crc="e1993f91" map="01"/>
             <part name="456-e05.12c" crc="c9761c78" map="10"/>
@@ -45,24 +44,27 @@
             <part name="456-e06.13c" crc="af58c548" map="10"/>
         </interleave>
         <interleave output="16">
-            <part name="456-d03.14a" crc="8cefb25f" map="01"/>
-            <part name="456-d07.14c" crc="d50b82cb" map="10"/>
+            <part name="456-e03.14a" crc="8cefb25f" map="01"/>
+            <part name="456-e07.14c" crc="d50b82cb" map="10"/>
         </interleave>
         <interleave output="16">
             <part name="456-e04.15a" crc="322423d0" map="01"/>
             <part name="456-e08.15c" crc="eb656266" map="10"/>
         </interleave>
-
-        <!-- Sound CPU: Z80 - starts at 0x40000 -->
-        <part name="456-d09.9c" crc="26bf9636"/>
-
-        <!-- Sound Wave - starts at 0x44000 -->
+        <part repeat="0xA0000"> FF</part>
+        <!-- audiocpu - starts at 0xE0000 -->
+        <part name="456-b09.9c" crc="26bf9636"/>
+        <!-- k005289 - starts at 0xE4000 -->
         <part name="400-a01.fse" crc="5827b1e8"/>
         <part name="400-a02.fse" crc="2f44f970"/>
-
+        <!-- Total 0xE4200 bytes - 912 kBytes -->
     </rom>
+
+
     <!-- enable vertical screen -->
-    <rom index="1"><part> 01 </part></rom>
+    <rom index="1">
+        <part>00</part>
+    </rom>
 
     <!-- DIP Switches B Default
         US version => A4 -> 10100100
@@ -83,5 +85,5 @@
         <dip name="Controls" bits="17" ids="Single,Dual"></dip>
         <dip name="Test mode" bits="18" ids="Off,On"></dip>
     </switches>
-    <buttons names="Option,Fire,Bomb,Start,Coin" default="B,Y,X,L,Start"/>
+    <buttons names="Option,Fire,Bomb,Start,Coin" default="B,Y,X,L,Start" count="3"/>
 </misterromdescription>

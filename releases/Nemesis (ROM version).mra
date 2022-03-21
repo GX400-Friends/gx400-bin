@@ -19,23 +19,22 @@
 -->
 
 <misterromdescription>
-    <about
-        source ="https://github.com/GX400-Friends/gx400-bin"
-        author="LMN-san OScherler Raki"
-        twitter="@LmnSama @oscherler @RCAVictorCo"
-    />
-    <name>nemesis</name>
-    <mratimestamp>202202200000</mratimestamp>
-    <setname>Nemesis (ROM)</setname>
+    <about source ="https://github.com/GX400-Friends/gx400-bin" author="LMN-san OScherler Raki" twitter="@LmnSama @oscherler @RCAVictorCo"/>
+    <name>Nemesis (ROM version)</name>
+    <setname>nemesis</setname>
+    <rbf>nemesis</rbf>
+    <mameversion>0240</mameversion>
     <year>1985</year>
     <manufacturer>Konami</manufacturer>
     <category>Shooter</category>
     <rbf>nemesis</rbf>
-    <mameversion>0217</mameversion>
-    <rom index="0" zip="nemesis.zip" md5="none" type="merged|nonmerged|split">
-        <!-- ROMs -->
-        
-        <!-- Main CPU: M68K -->
+    <players>2</players>
+    <joystick>8-way</joystick>
+    <rotation>Horizontal</rotation>
+    <region>World</region>
+
+    <rom index="0" zip="nemesis.zip" md5="None">
+        <!-- maincpu - starts at 0x0 -->
         <interleave output="16">
             <part name="456-d01.12a" crc="35ff1aaa" map="01"/>
             <part name="456-d05.12c" crc="23155faa" map="10"/>
@@ -52,36 +51,38 @@
             <part name="456-d04.15a" crc="9ca75592" map="01"/>
             <part name="456-d08.15c" crc="03c0b7f5" map="10"/>
         </interleave>
-
-        <!-- Sound CPU: Z80 - starts at 0x40000 -->
+        <part repeat="0xA0000"> FF</part>
+        <!-- audiocpu - starts at 0xE0000 -->
         <part name="456-d09.9c" crc="26bf9636"/>
-
-        <!-- Sound Wave - starts at 0x44000 -->
+        <!-- k005289 - starts at 0xE4000 -->
         <part name="400-a01.fse" crc="5827b1e8"/>
         <part name="400-a02.fse" crc="2f44f970"/>
-
+        <!-- Total 0xE4200 bytes - 912 kBytes -->
     </rom>
+
     <!-- enable vertical screen -->
-    <rom index="1"><part> 01 </part></rom>
+    <rom index="1">
+        <part>00</part>
+    </rom>
 
     <!-- DIP Switches B Default
         US version => A4 -> 10100100
         UK version => AD -> 10101101
     -->
     <switches base="0x10" default="00,A4,00">
-        <!-- DSWA -->
+        <!-- DSW0 -->
         <dip name="Coin A" bits="0,3" ids="1credit/1play,1credit/2play,1credit/3play,1credit/4play,1credit/5play,1credit/6play,1credit/7play,2credits/1play,2credits/3play,2credits/5play,3credits/1play,3credits/2play,3credits/4play,4credits/1play,4credits/3play,Free Play"></dip>
         <dip name="Coin B" bits="4,7" ids="1credit/1play,1credit/2play,1credit/3play,1credit/4play,1credit/5play,1credit/6play,1credit/7play,2credits/1play,2credits/3play,2credits/5play,3credits/1play,3credits/2play,3credits/4play,4credits/1play,4credits/3play"></dip>
-        <!-- DSWB -->
+        <!-- DSW1 -->
         <dip name="Lives" bits="8,9" ids="3,4,5,7" values="0,1,2,3"></dip>
         <dip name="Cabinet" bits="10" ids="Table,Upright" values="0,1"></dip>
         <dip name="Bonus Life" bits="11,12" ids="50k/100k,30k,50k,100k" values="0,1,2,3"></dip>
         <dip name="Difficulty" bits="13,14" ids="Easy,Normal,Hard,Very Hard" values="0,1,2,3"></dip>
         <dip name="Demo Sounds" bits="15" ids="Off,On" values="0,1"></dip>
-        <!-- DSWC -->
+        <!-- TEST -->
         <dip name="Flip Screen" bits="16" ids="Normal,Upside down" values="0,1"></dip>
         <dip name="Controls" bits="17" ids="Single,Dual" values="0,1"></dip>
         <dip name="Test mode" bits="18" ids="Off,On"></dip>
     </switches>
-    <buttons names="Option,Fire,Bomb,Start,Coin" default="B,Y,X,L,Start"/>
+    <buttons names="Option,Fire,Bomb,Start,Coin" default="B,Y,X,L,Start" count="3"/>
 </misterromdescription>
