@@ -1,10 +1,10 @@
 # FPGA Clone of Konami GX400 Arcade System for MiSTer
 
-FPGA compatible core for the Nemesis (1985) arcade hardware for MiSTer FPGA, written by [LMN-san][@LmnSama], [OScherler][@oscherler], and [Raki][@RCAVictorCo]. This core is based on the Nemesis schematics from Konami and has been verified against several different physical PCBs (Konami Bubble System, Salamander, Salamander Bootleg). The game is fully playable, but exhibits some sprite glitches when there are many objects on screen, that do not appear in the simulation.
+FPGA compatible core for the Nemesis (1985) arcade hardware for MiSTer FPGA, written by [LMN-san][@LmnSama], [OScherler][@oscherler], and [Raki][@RCAVictorCo]. This core is based on the Nemesis schematics from Konami and has been verified against several different physical PCBs (Konami Bubble System, Salamander, Salamander Bootleg). The game is fully playable and there are no known issues.
 
-Our goal during development is to be as close to the original hardware as possible, and not to rely on superficiality and supposition, which is why, in addition to fixing the visible problems, we are also going to continue improving the reproduction accuracy with more tests and measurements.
+Our goal during development is to be as close to the original hardware as possible, and not to rely on superficiality and supposition, which is why, after fixing the visible problems, we are going to continue improving the reproduction accuracy with more tests and measurements.
 
-This core is is developed using the [jtframe][] framework by Jotego ([@topapate][]). It is in active development and the source code will be published once it is out of Beta. It does not need an SDRAM module to run.
+This core is is developed using the [jtframe][] framework by Jotego ([@topapate][]). It is in active development and the source code will be published once it is out of Beta. It needs an SDRAM module to run.
 
 [@LmnSama]:     https://twitter.com/@LmnSama
 [@oscherler]:   https://twitter.com/@oscherler
@@ -18,6 +18,8 @@ Game         | Status      | Release
 -------------|-------------|----------
 Nemesis      | Implemented | Beta
 Nemesis (UK) | Implemented | Beta
+RF2          | In Progress | None
+Konami GT    | In Progress | None
 
 ## Custom ICs
 
@@ -54,11 +56,7 @@ T80s    | Zilog Z80 CPU      | Daniel Wallner | Included in jtframe
 
 ## Known Issues
 
-* Screen Flip/Cocktail Mode is not properly implemented yet;
-* Resetting the game several times will make the sprites disappear;
-* Sprite glitches with many objects on screen;
-* Audio volumes need to be adjusted;
-* PLL frequencies need to be slightly adjusted.
+None.
 
 Please report issues in [the issue tracker for this repository][issues].
 
@@ -67,8 +65,7 @@ Please report issues in [the issue tracker for this repository][issues].
 ## Roadmap
 
 * RGB output levels sampling and adjustments;
-* Audio output measurements and adjustments;
-* Clock and bus timing adjustments.
+* Audio output measurements and adjustments.
 
 ## Installation
 
@@ -91,3 +88,9 @@ The authors would like to thank Jotego for his amazing jtframe framework, and So
 [LMNSan-gh]:    https://github.com/Lmn-San
 [oscherler-gh]: https://github.com/oscherler
 [raki-gh]:      https://github.com/ika-musume
+
+## Support the authors
+
+* **Raki’s Patreon**: <https://www.patreon.com/ikamusume>
+* **LMN-san’s Ko-Fi**: <https://ko-fi.com/lmnsan>
+* **OScherler’s Ko-Fi**: <https://ko-fi.com/oscherler>
