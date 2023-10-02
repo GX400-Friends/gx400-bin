@@ -1,5 +1,21 @@
 # GX400 FPGA Core Change Log
 
+## 2023-09-29 – RC 1
+
+* Wrote a custom ROM (LmnSan) for the Z80 that plays test sounds and
+  ran it on real hardware to compare. Many thanks to Alamone for accepting
+  to test it on his board;
+* Fixed sound mixing (signed sound);
+* Fixed PROM sound response curve;
+* Fixed off-by-one error in K5289 frequency;
+* Fixed channel volumes;
+* Fixed AY-3-8910 compression/dynamic range to match hardware;
+* Updated jtframe to latest version.
+
+### Known issues:
+
+None.
+
 ## 2022-06-28 – Beta 2
 
 * Fixed partially off-screen sprites bleeding to the other edge of the screen;

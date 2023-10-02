@@ -2,9 +2,9 @@
 
 FPGA compatible core for the Nemesis (1985) arcade hardware for MiSTer FPGA, written by [LMN-san][@LmnSama], [OScherler][@oscherler], and [Raki][@RCAVictorCo]. This core is based on the Nemesis schematics from Konami and has been verified against several different physical PCBs (Konami Bubble System, Salamander, Salamander Bootleg). The game is fully playable and there are no known issues.
 
-Our goal during development is to be as close to the original hardware as possible, and not to rely on superficiality and supposition, which is why, after fixing the visible problems, we are going to continue improving the reproduction accuracy with more tests and measurements.
+Our goal during development is to be as close to the original hardware as possible, and not to rely on superficiality and supposition, which is why, after fixing the visible problems, we are going to continue improving the reproduction accuracy with more tests and measurements. Great efforts have been made towards accuracy. Raki wrote a custom ROM for the 68000 to test all possible cases of tile/sprite priority bits on original hardware. LmnSan wrote a custom ROM for the Z80 to play test sounds on all channels, at every volume and every frequency, and did a thorough analysis of the results compared to original hardware. Olivier also knows how to write custom ROMs, but the ones he made for this project are less impressive.
 
-This core is is developed using the [jtframe][] framework by Jotego ([@topapate][]). It is in active development and the source code will be published once it is out of Beta. It needs an SDRAM module to run.
+This core is developed using the [jtframe][] framework by Jotego ([@topapate][]). It is in active development and the source code will be published once it is out of Beta. It needs an SDRAM module to run.
 
 [@LmnSama]:     https://twitter.com/@LmnSama
 [@oscherler]:   https://twitter.com/@oscherler
@@ -61,11 +61,6 @@ None.
 Please report issues in [the issue tracker for this repository][issues].
 
 [issues]: https://github.com/GX400-Friends/gx400-bin/issues
-
-## Roadmap
-
-* RGB output levels sampling and adjustments;
-* Audio output measurements and adjustments.
 
 ## Installation
 
