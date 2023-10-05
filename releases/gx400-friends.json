@@ -1,0 +1,35 @@
+{
+    "db_id": "GX400-Friends",
+    "timestamp": 1647880787,
+    "files": {
+        "_Arcade/cores/nemesis_beta1_20220314.rbf": {
+            "hash": "ddcfc39e4475c96c8c709647a3f89100",
+            "size": 3815304,
+            "url": "https://raw.githubusercontent.com/GX400-Friends/gx400-bin/main/releases/nemesis_beta1_20220314.rbf",
+            "tags": [],
+            "overwrite": true,
+            "reboot": false
+        },
+        "_Arcade/Nemesis (UK).mra": {
+            "hash": "e75b1de487295f51bf633f4707416e67",
+            "size": 3980,
+            "url": "https://raw.githubusercontent.com/GX400-Friends/gx400-bin/main/releases/Nemesis%20(UK).mra",
+            "overwrite": true
+        },
+
+        "_Arcade/Nemesis (US).mra": {
+            "hash": "3ee2c95d633acab9036da2eb54e4cca0",
+            "size": 4062,
+            "url": "https://raw.githubusercontent.com/GX400-Friends/gx400-bin/main/releases/Nemesis%20(US).mra",
+            "overwrite": true
+        }
+    },
+    "folders": {
+        "_Arcade/": {
+            "tags": []
+        },
+        "_Arcade/cores": {
+            "tags": []
+        }
+    }
+}

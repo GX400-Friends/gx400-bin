@@ -66,6 +66,16 @@ Please report issues in [the issue tracker for this repository][issues].
 
 Copy the `.mra` files in `/_Arcade/` and the `.rbf` file in `/_Arcade/cores/`. Then either run the `update_all.sh` script if you have it installed, or manually place the MAME ROM files (`nemesis.zip` merged, or both `nemesis.zip` and `nemesisuk.zip`, a.k.a. `nemesuk.zip`, split) in `/games/mame/`.
 
+### Installation using mister downloader
+
+Add the following to the bottom of `/media/fat/downloader.ini` on your MiSTer:
+
+```ini
+[GX400-Friends]
+db_url = https://raw.githubusercontent.com/GX400-Friends/gx400-bin/main/releases/gx400-friends.json
+```
+
+
 ## Credits
 
 * **LMN-san**
